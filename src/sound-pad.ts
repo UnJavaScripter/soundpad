@@ -8,8 +8,8 @@ class SoundPad extends HTMLElement {
     this.audioElem = document.createElement('audio');
 
     this.addEventListener<any>('padbuttonpress', (event: CustomEvent) => {
-      event.stopPropagation();
       this.enqueue(event.detail.id, event.detail.sound);
+      event.stopPropagation();
     });
   }
 
@@ -50,12 +50,15 @@ class SoundPad extends HTMLElement {
 
     this.currentlyPlaying = id;
     this.audioElem.src = soundPath;
+
     this.audioElem.play();
+
     this.audioElem.onended = () => {
       this.removeQueuedSound(id);
       this.playSound();
     }
   }
+
   removeQueuedSound(id: number) {
     const padButtonELem: any = document.querySelector("#" + id);
     padButtonELem.soundEnded();
