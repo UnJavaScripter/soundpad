@@ -6,8 +6,8 @@ class SoundPad extends HTMLElement {
         this.currentlyPlaying = 0;
         this.audioElem = document.createElement('audio');
         this.addEventListener('padbuttonpress', (event) => {
-            event.stopPropagation();
             this.enqueue(event.detail.id, event.detail.sound);
+            event.stopPropagation();
         });
     }
     enqueue(padButtonId, soundName) {
