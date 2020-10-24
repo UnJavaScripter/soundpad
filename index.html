@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Soundpad</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔊</text></svg>">
+  <style>
+    body {
+      background-color: #232326;
+      color: #fefeff;
+      font-family:Verdana, Geneva, Tahoma, sans-serif;
+      margin: 0;
+      padding: 2rem 3rem;
+    }
+  </style>
+</head>
+<body>
+  <h1>Soundpad</h1>
+
+  <section>
+    <sound-pad>
+      <button type="button" is="pad-button" sound-src="./assets/what.mp3" pad-label="What?"></button>
+      <button type="button" is="pad-button" sound-src="./assets/doh.mp3" pad-label="Doh!"></button>
+      <button type="button" is="pad-button" sound-src="./assets/applause.mp3" pad-label="Applause"></button>
+    </sound-pad>
+  </section>
+
+  <script src="dist/app.js"></script>
+  <script src="dist/pad-button.js"></script>
+  <script src="dist/sound-pad.js"></script>
+</body>
+</html>
